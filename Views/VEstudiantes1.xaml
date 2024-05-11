@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCoelloS6.Views.VEstudiantes1"
+             Title="VEstudiantes1">
+    <VerticalStackLayout>
+        <Image 
+            Source="image3.png"
+             HeightRequest="170"
+             Aspect="AspectFit"
+            
+            />
+        <Grid>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Codigo"
+             BackgroundColor="Blue"
+             TextColor="White"
+             Grid.Row="0"
+             Grid.Column="0"
+             VerticalTextAlignment="Center"
+             HorizontalTextAlignment="Center"/>
+            <Label Text="Nombre"
+            BackgroundColor="Blue"
+            TextColor="White"
+            Grid.Row="0"
+            Grid.Column="1"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"/>
+
+            <Label Text="Apellido"
+            BackgroundColor="Blue"
+            TextColor="White"
+            Grid.Row="0"
+            Grid.Column="2"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"/>
+            <Label Text="Edad"
+            BackgroundColor="Blue"
+            TextColor="White"
+            Grid.Row="0"
+            Grid.Column="3"
+            VerticalTextAlignment="Center"
+            HorizontalTextAlignment="Center"/>
+            </Grid> 
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>                     
+            <ListView x:Name="ListCodigos"        
+               Grid.Row="0"
+               Grid.Column="0">                
+            <ListView.ItemTemplate>
+                 <DataTemplate>
+                     <ViewCell>
+                        <StackLayout>
+                                <Label x:Name="LblCodigo" Text="{Binding codigo}"
+                                    BackgroundColor="Yellow"
+                                TextColor="Black"
+                                VerticalTextAlignment="Center"
+                                HorizontalTextAlignment="Center"
+                               />
+                            </StackLayout>                    
+                    </ViewCell>    
+                  </DataTemplate>
+             </ListView.ItemTemplate>  
+             </ListView>
+            <ListView x:Name="ListNombres"        
+                    Grid.Row="0"
+                    Grid.Column="1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label x:Name="LblNombres" Text="{Binding nombre}"
+                                    BackgroundColor="Yellow"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    HorizontalTextAlignment="Center"
+                                   />       
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="ListApellidos"        
+                    Grid.Row="0"
+                    Grid.Column="2">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label x:Name="LblApellidos" Text="{Binding apellido}"
+                                       BackgroundColor="Yellow"
+                                       TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    HorizontalTextAlignment="Center"
+                                   />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="ListEdad"        
+                    Grid.Row="0"
+                    Grid.Column="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label x:Name="LblNombres" Text="{Binding edad}"
+                                    BackgroundColor="Yellow"
+                                    TextColor="Black"
+                                    VerticalTextAlignment="Center"
+                                    HorizontalTextAlignment="Center"
+                                   />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+        
+    </VerticalStackLayout>
+    
+</ContentPage>
