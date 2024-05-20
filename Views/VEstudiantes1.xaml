@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SCoelloS6.Views.VEstudiantes1"
              Title="VEstudiantes1">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Spacing="10">
         <Image 
             Source="image3.png"
              HeightRequest="170"
@@ -54,93 +55,62 @@
             HorizontalTextAlignment="Center"/>
             </Grid> 
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>                     
-            <ListView x:Name="ListCodigos"        
-               Grid.Row="0"
-               Grid.Column="0">                
-            <ListView.ItemTemplate>
+           <ListView x:Name="ListEstudy" ItemSelected="ListEstudy_ItemSelected">
+                <ListView.ItemTemplate>
                  <DataTemplate>
                      <ViewCell>
                         <StackLayout>
-                                <Label x:Name="LblCodigo" Text="{Binding codigo}"
-                                    BackgroundColor="Yellow"
-                                TextColor="Black"
-                                VerticalTextAlignment="Center"
-                                HorizontalTextAlignment="Center"
-                               />
-                            </StackLayout>                    
-                    </ViewCell>    
-                  </DataTemplate>
-             </ListView.ItemTemplate>  
-             </ListView>
-            <ListView x:Name="ListNombres"        
-                    Grid.Row="0"
-                    Grid.Column="1">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label x:Name="LblNombres" Text="{Binding nombre}"
-                                    BackgroundColor="Yellow"
-                                    TextColor="Black"
-                                    VerticalTextAlignment="Center"
-                                    HorizontalTextAlignment="Center"
-                                   />       
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="Lblcodigo" Text="{Binding codigo }"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                 BackgroundColor="Yellow"
+                                 TextColor="Black"
+                                 VerticalTextAlignment="Center"
+                                 HorizontalTextAlignment="Center"/>
+                                <Label x:Name="Lblnombre" Text="{Binding nombre}"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                 BackgroundColor="Yellow"
+                                 TextColor="Black"
+                                 VerticalTextAlignment="Center"
+                                 HorizontalTextAlignment="Center"/>
+                                <Label x:Name="Lblapellido" Text="{Binding apellido}"
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                 BackgroundColor="Yellow"
+                                 TextColor="Black"
+                                 VerticalTextAlignment="Center"
+                                 HorizontalTextAlignment="Center"/>
+                                <Label x:Name="Lbledad" Text="{Binding edad}"
+                                Grid.Row="0"
+                                Grid.Column="3"
+                                 BackgroundColor="Yellow"
+                                 TextColor="Black"
+                                 VerticalTextAlignment="Center"
+                                 HorizontalTextAlignment="Center"/>
+                                </Grid>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <ListView x:Name="ListApellidos"        
-                    Grid.Row="0"
-                    Grid.Column="2">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label x:Name="LblApellidos" Text="{Binding apellido}"
-                                       BackgroundColor="Yellow"
-                                       TextColor="Black"
-                                    VerticalTextAlignment="Center"
-                                    HorizontalTextAlignment="Center"
-                                   />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView x:Name="ListEdad"        
-                    Grid.Row="0"
-                    Grid.Column="3">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label x:Name="LblNombres" Text="{Binding edad}"
-                                    BackgroundColor="Yellow"
-                                    TextColor="Black"
-                                    VerticalTextAlignment="Center"
-                                    HorizontalTextAlignment="Center"
-                                   />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </Grid>
-        
+      
+        <Button x:Name="btnAgregar"
+                Text="agregar estudiantes"
+                Clicked="btnAgregar_Clicked"/>
+
     </VerticalStackLayout>
     
 </ContentPage>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SCoelloS6.Views.VActuaEliminar"
+             Title="VActuaEliminar">
+    <VerticalStackLayout
+        Spacing="25">
+        <Label 
+            Text="Actualizar / Eliminar"
+            FontSize="20"
+            HorizontalOptions="Center" />
+        <Entry x:Name="txtCodigo"
+               IsReadOnly="True"/>
+        <Entry x:Name="txtnombre"
+                Placeholder="Nombre"/>
+        <Entry x:Name="txtapellido"
+        Placeholder="Apellido"/>
+        <Entry x:Name="txtedad"
+        Placeholder="Edad"/>
+        <Button x:Name="BtnActualizar"
+                Text="Actualizar estudiantes"
+                Clicked="BtnActualizar_Clicked"/>
+        <Button x:Name="BtnEliminar"
+        Text="Eliminar estudiantes"
+         Clicked="BtnEliminar_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

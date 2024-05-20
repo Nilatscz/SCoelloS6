@@ -6,7 +6,7 @@ namespace SCoelloS6.Views;
 
 public partial class VEstudiantes1 : ContentPage
 {
-	private const string url = "http://192.168.1.83/moviles/wsestudiantes.php";
+	private const string url = "http://192.168.100.9/moviles/wsestudiantes.php";
 	private readonly HttpClient cliente= new HttpClient();
 	private ObservableCollection<Estudiantes> est;
 	public VEstudiantes1()
@@ -20,11 +20,17 @@ public partial class VEstudiantes1 : ContentPage
 		var contebt = await cliente.GetStringAsync(url);
 		List<Estudiantes>mostrar=JsonConvert.DeserializeObject<List<Estudiantes>>(contebt);
         est = new ObservableCollection<Estudiantes>(mostrar);
-		ListCodigos.ItemsSource = est;
-		ListNombres.ItemsSource = est;
-        ListApellidos.ItemsSource = est;
-        ListEdad.ItemsSource = est;
+		ListEstudy.ItemsSource = est;
+	}
 
+    private void btnAgregar_Clicked(object sender, EventArgs e)
+    {
+		Navigation.PushAsync(new Vagregar());
     }
 
+    private void ListEstudy_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    {
+		var objEstudiante = (Estudiantes)e.SelectedItem;
+		Navigation.PushAsync(new VActuaEliminar(objEstudiante));
+    }
 }
